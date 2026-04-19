@@ -1,0 +1,51 @@
+run_name: WikiMEL
+seed: 43
+pretrained_model: 'clip-vit-base-patch32'
+lr: 5e-6
+
+
+data:
+  num_entity: 109976
+  kb_img_folder: /data/WikiMEL/kb_image
+  mention_img_folder: /data/WikiMEL/mention_image
+  qid2id: /data/WikiMEL/qid2id.json
+  entity: /data/WikiMEL/kb_entity.json
+  train_file: /data/WikiMEL/WIKIMEL_train.json
+  dev_file: /data/WikiMEL/WIKIMEL_dev.json
+  test_file: /data/WikiMEL/WIKIMEL_test.json
+  batch_size: 64
+  num_workers: 8
+  text_max_length: 50
+  visual_patch_length: 50
+  eval_chunk_size: 1000
+  eval_batch_size: 50
+  embed_update_batch_size: 512
+
+  'n': 16
+  num_candidates: 16
+  llm: 'deepseek-v3'
+
+
+model:
+  input_hidden_dim: 512
+  input_image_hidden_dim: 768
+  hidden_dim: 512
+  hidden_size: 512
+  num_hidden_layers: 1
+  num_attention_heads: 2
+  use_intermediate: 0
+  intermediate_size: 512
+  target_scale: 10
+  modal_num: 2
+  temperature: 0.01
+  router_weight: 0.1
+  router_temperature_modal: 0.1
+  router_temperature_grain: 0.5
+
+trainer:
+  accelerator: gpu
+  devices: 1
+  max_epochs: 20
+  num_sanity_val_steps: 0
+  check_val_every_n_epoch: 2
+  log_every_n_steps: 30

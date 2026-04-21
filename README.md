@@ -103,7 +103,7 @@ If you find this work useful for your research, please cite our paper:
 
 ```bibtex
 @inproceedings{10.1145/3805712.3809583,
-  author       = {Your Name and Co-author Name},
+  author       = {Peng Jie, Yongxue Shan, Yongfu Zha, Xiaodong Wang},
   title        = {MECI: Multi-Element Collaborative Interaction for Multimodal Entity Linking},
   booktitle    = {Proceedings of the 49th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR '26)},
   year         = {2026},
@@ -111,7 +111,5 @@ If you find this work useful for your research, please cite our paper:
   address      = {Melbourne, VIC, Australia},
   publisher    = {ACM},
   doi          = {10.1145/3805712.3809583},
-  location     = {Melbourne, VIC, Australia},
-  pages        = {--},
-  numpages     = {--}
+  location     = {Melbourne, VIC, Australia}
 }
